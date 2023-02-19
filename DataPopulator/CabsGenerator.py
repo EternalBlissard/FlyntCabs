@@ -32,5 +32,5 @@ for i in range(length-1,0,-1):
     mycursor.execute(query,querydata)
     mydb.commit()
     #print(querydata)
-    print("Inserted at ",length-i+1," row")
+    print("Inserted at ",length-i," row")
 print("Data Made")    
