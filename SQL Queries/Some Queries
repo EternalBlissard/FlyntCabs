@@ -39,7 +39,7 @@ WHERE b.cab_id = c.cab_id AND b.bookingtime >= DATE_SUB(NOW(),INTERVAL 24 HOUR))
 
 SELECT SUM(b.fare) AS total_revenue
 FROM bookings b
-WHERE b.date >= DATE_SUB(NOW(), INTERVAL 1 YEAR) AND
+WHERE b.bookingtime >= DATE_SUB(NOW(), INTERVAL 1 YEAR) AND
 b.cab_id = 1 -- sample cab id;
 
 7. Details with Fare higher than avg:
