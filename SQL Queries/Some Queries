@@ -6,7 +6,6 @@ JOIN bookings b ON c.Id = b.user_id
 WHERE b.bookingtime >= DATE_SUB(NOW(), INTERVAL 3 MONTH)
 GROUP BY c.Id
 ORDER BY total_bookings DESC;
-drop database f1yntcabs;
 
 2. Driver and Cab details for the driver who are currently driving:
 
