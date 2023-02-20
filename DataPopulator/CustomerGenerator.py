@@ -4,7 +4,7 @@ import random
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="Chai@123",
+  password="rootpassword",
   database="f1yntcabs"
 )
 mycursor = mydb.cursor()
