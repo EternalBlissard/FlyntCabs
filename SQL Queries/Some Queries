@@ -17,7 +17,7 @@ WHERE d.status = 'active';
 3. Customer with 0 booking till date:
 
 SELECT *
-FROM customer c
+FROM customer_records c
 WHERE c.Id NOT IN (SELECT user_id FROM bookings);
 
 4. Number of Bookings by a single customer:
