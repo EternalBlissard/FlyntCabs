@@ -8,30 +8,29 @@ mydb = mysql.connector.connect(
   database="f1yntcabs"
 )
 mycursor = mydb.cursor()
-mycursor.execute("create table IF NOT EXISTS Customer_Records(Id int PRIMARY KEY, FName varchar(30) NOT NULL, LName varchar(30),Gender varchar(10), PrimaryPhone long, Email varchar(60), Address varchar (80), Age int NOT NULL, JoiningDate DATE)")
-data = read_csv("customerdata.csv")
-Fname = data['first_name'].tolist()
-Lname = data['Last_name'].tolist()
-Gender= data['Gender'].tolist()
-Phone = data['PhoneNumber'].tolist()
-Email = data['Email'].tolist()
-Address= data['Address'].tolist()
-date = data['date'].tolist()
-length=len(Fname)
+mycursor.execute("CREATE TABLE IF NOT EXISTS cabs (cab_id INT PRIMARY KEY AUTO_INCREMENT,type VARCHAR(50) NOT NULL,model VARCHAR(50) NOT NULL,capacity INT NOT NULL,color VARCHAR(50) NOT NULL,license_plate VARCHAR(20) NOT NULL,make VARCHAR(50) NOT NULL,year INT NOT NULL,status VARCHAR(50) NOT NULL,BaseRate INT NOT NULL);")
+
+Type=["Mini","Sedan","SUV","Lux"]
+Capacity=[3,4,6,2]
+Baserate=[12,18,30,45]
+Status=["online","active","offline"]
+data = read_csv("Cabdata.csv")
+Model = data['Model'].tolist()
+Color = data['Color'].tolist()
+License= data['License_plate'].tolist()
+Make = data['Make'].tolist()
+Year = data['Year'].tolist()
+length = len(Model)
 for i in range(length):
-    First_name=Fname[i]
-    Last_name=Lname[i]
-    Gender_ = Gender[i]
-    Phone_ = Phone[i]
-    Email_ = Email[i]
-    Address_ = Address[i]
-    date_ = date[i]
-    Age= 13 +(i%2)+(i%3)+(i%5)+(i%7)+(i%11)+(i%13)+(i%17)
-    querydata=(i+1, First_name, Last_name, Gender_, Phone_, Email_, Address_,Age, date_)
-    query="insert into Customer_Records values(%s, %s, %s, %s, %s, %s,%s,%s,%s)"
+    Model_=Model[i]
+    Color_=Color[i]
+    License_=License[i]
+    Make_=Make[i]
+    Year_ = Year[i]
+    querydata=(i+1,Type[i%4],Model_, Capacity[i%4], Color_, License_, Make_,Year_,Status[(i%5)%3],Baserate[i%4])
+    query="insert into cabs values(%s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
     mycursor.execute(query,querydata)
     mydb.commit()
+    #print(querydata)
     print("Inserted at ",i+1," row")
-print("User Data Make")    
-
-    
+print("Cabs Data Made")
