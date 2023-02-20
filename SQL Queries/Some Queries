@@ -23,7 +23,7 @@ WHERE c.Id NOT IN (SELECT user_id FROM bookings);
 4. Number of Bookings by a single customer:
 
 SELECT c.*, COUNT(b.booking_id) AS total_bookings
-FROM customer c
+FROM customer_records c
 LEFT JOIN bookings b ON c.Id = b.user_id
 GROUP BY c.Id;
 
