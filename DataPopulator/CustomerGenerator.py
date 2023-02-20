@@ -4,7 +4,7 @@ import random
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="rootpassword",
+  password="Chai@123",
   database="f1yntcabs"
 )
 mycursor = mydb.cursor()
@@ -18,20 +18,20 @@ Email = data['Email'].tolist()
 Address= data['Address'].tolist()
 date = data['date'].tolist()
 length=len(Fname)
-for i in range(0,length):
-    First_name=Fname.pop(i)
-    Last_name=Lname.pop(i)
-    Gender_ = Gender.pop(i)
-    Phone_ = Phone.pop(i)
-    Email_ = Email.pop(i)
-    Address_ = Address.pop(i)
-    date_ = date.pop(i)
-    Age= random.randint(13,60)
-    querydata=(i, First_name, Last_name, Gender_, Phone_, Email_, Address_,Age, date_)
+for i in range(length):
+    First_name=Fname[i]
+    Last_name=Lname[i]
+    Gender_ = Gender[i]
+    Phone_ = Phone[i]
+    Email_ = Email[i]
+    Address_ = Address[i]
+    date_ = date[i]
+    Age= 13 +(i%2)+(i%3)+(i%5)+(i%7)+(i%11)+(i%13)+(i%17)
+    querydata=(i+1, First_name, Last_name, Gender_, Phone_, Email_, Address_,Age, date_)
     query="insert into Customer_Records values(%s, %s, %s, %s, %s, %s,%s,%s,%s)"
     mycursor.execute(query,querydata)
     mydb.commit()
     print("Inserted at ",i+1," row")
-print("Done Data Make")    
+print("Done User Data Make")    
 
     
