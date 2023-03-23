@@ -1,0 +1,40 @@
+-- Identify the top 5 pick-up locations by number of trips, broken down by month and driver rating.
+
+SELECT pick_up_location, MONTHNAME(PickUpTime) AS month, ROUND(d.rating, 1) AS driver_rating, COUNT(*) AS num_trips
+FROM TripRecords tr
+JOIN bookings b ON tr.booking_id = b.booking_id
+JOIN drivers d ON d.cab_id = b.cab_id
+GROUP BY pick_up_location, month, driver_rating
+HAVING pick_up_location IS NOT NULL AND driver_rating IS NOT NULL
+ORDER BY num_trips DESC
+LIMIT 5;
+
+-- Determine total number of trips taken from each place
+
+SELECT pick_up_location, COUNT(trip_id) AS total_trips
+FROM TripRecords
+WHERE YEAR(PickUpTime) = 2023
+GROUP BY pick_up_location;
+
+-- Gives list of top 3 customers who have longest trips fir particular quarter of year
+
+SELECT CONCAT(c.FName, ' ', c.LName) AS customer_name, SUM(tr.dist) AS total_distance 
+FROM TripRecords tr 
+JOIN bookings b ON tr.booking_id = b.booking_id 
+JOIN Customer_Records c ON b.user_id = c.Id 
+WHERE YEAR(DropOffTime) = 2023 AND QUARTER(DropOffTime) = 1
+GROUP BY CONCAT(c.FName, ' ', c.LName) 
+ORDER BY total_distance DESC 
+LIMIT 3;
+
+-- Give average trip duration on each hour of day 
+
+SELECT HOUR(PickUpTime) AS hour_of_day, AVG(TIMESTAMPDIFF(MINUTE, PickUpTime, DropOffTime)) AS avg_trip_duration
+FROM TripRecords
+WHERE YEAR(PickUpTime) = 2023 AND MONTH(PickUpTime) = 2
+GROUP BY HOUR(PickUpTime)
+ORDER BY hour_of_day asc;
+
+
+
+
