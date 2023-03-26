@@ -31,6 +31,28 @@ GROUP BY HOUR(PickUpTime)
 ORDER BY hour_of_day asc;
 -- Give average trip duration on each hour of day 
 
+SELECT d.name, c.type, COUNT(tr.trip_id) AS num_trips
+FROM drivers d
+JOIN cabs c ON c.cab_id = d.cab_id
+JOIN bookings b ON b.cab_id = c.cab_id
+JOIN TripRecords tr ON tr.booking_id = b.booking_id
+GROUP BY d.name, c.type WITH ROLLUP
+HAVING GROUPING(d.name) = 0 AND GROUPING(c.type) = 0;
+-- Number of trips made by each driver with each cab 
+
+SELECT 
+    d.name,
+    c.type,
+    COUNT(tr.trip_id) AS num_trips,
+    SUM(b.fare) AS revenue
+FROM drivers d
+JOIN cabs c ON c.cab_id = d.cab_id
+JOIN bookings b ON b.cab_id = c.cab_id
+LEFT JOIN TripRecords tr ON tr.booking_id = b.booking_id
+GROUP BY d.name, c.type WITH ROLLUP
+HAVING (GROUPING(d.name) = 0 OR GROUPING(c.type) = 0) AND (c.type IS NOT NULL AND d.name IS NOT NULL);
+-- For each combination of driver and cab type, showing the number of trips and revenue generated for that combination
+
 
 
 
