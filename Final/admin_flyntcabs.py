@@ -9,7 +9,7 @@ def q1():
         mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        password="20203001",
+        password="",
         database="f1yntcabs"
         )
         mycursor = mydb.cursor()
@@ -34,7 +34,7 @@ def q2():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=""
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -54,7 +54,7 @@ def q3():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -69,7 +69,7 @@ def q4():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -88,7 +88,7 @@ def q5():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -106,7 +106,7 @@ def q6():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     cursor = mydb.cursor()
@@ -124,7 +124,7 @@ def q7():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -144,7 +144,7 @@ def q8():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -158,7 +158,7 @@ def q9():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -177,7 +177,7 @@ def q10():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -204,7 +204,7 @@ def q11():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -214,7 +214,7 @@ def q12():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -224,7 +224,7 @@ def o1():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -248,7 +248,7 @@ def o2():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -268,7 +268,7 @@ def o3():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -292,7 +292,7 @@ def o4():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -313,7 +313,7 @@ def o5():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -336,7 +336,7 @@ def o6():
     mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    password="20203001",
+    password=" ",
     database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -452,7 +452,7 @@ def OuterFunction():
             mydb = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
-                password="20203001",
+                password=" ",
                 database="f1yntcabs"
             )
             mycursor = mydb.cursor()
@@ -485,7 +485,7 @@ def OuterFunction():
             mydb = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
-                password="20203001",
+                password=" ",
                 database="f1yntcabs"
             )
             mycursor = mydb.cursor()
