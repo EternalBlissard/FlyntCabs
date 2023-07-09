@@ -12,7 +12,7 @@ def user_input(id):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        password="20203001",
+        password="",
         database="f1yntcabs"
     )
     mycursor = mydb.cursor()
@@ -190,7 +190,7 @@ def main():
         mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        password="20203001",
+        password="",
         database="f1yntcabs"
         )
         mycursor = mydb.cursor()
@@ -217,7 +217,7 @@ def main():
         mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        password="20203001",
+        password="",
         database="f1yntcabs"
         )
         mycursor = mydb.cursor()
