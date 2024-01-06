@@ -2,6 +2,9 @@
 
 FlyntCabs is a versatile command-line interface (CLI) application designed to facilitate various functionalities for users, drivers, and administrators. This user guide provides comprehensive information on the application's features and how to effectively utilize them.
 
+## Diagrams
+ER,UML Notation,Relational Diagram of the project can be found in <a href="https://github.com/EternalBlissard/FlyntCabs/tree/main/Diagrams" >this</a> directory.
+
 ## Requirements:
 - Python Installed in system
 - mysql-connector-python
